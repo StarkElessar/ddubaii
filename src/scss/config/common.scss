@@ -1,0 +1,51 @@
+.button-close {
+  width: rem(32);
+  height: rem(32);
+  border: rem(2) solid #fff;
+  transition: $standartTrans;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  &:hover {
+    background-color: rgba(#fff, 10%);
+  }
+  &:active {
+    background-color: rgba(#fff, 20%);
+  }
+}
+.button-main {
+  padding: rem(20) rem(64);
+  background: linear-gradient(120deg, #21363d 0%, #3f5e7d 100%);
+  border: rem(2) solid #fff;
+  border-radius: rem(12);
+  overflow: hidden;
+  position: relative;
+  transition: $standartTrans;
+  &:hover {
+    box-shadow: 0 rem(4) rem(10) rgba(#000, 15%);
+    transform: translateY(rem(-2));
+    &::before {
+      background-color: rgba(#000, 20%);
+    }
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0%);
+    transition: $standartTrans;
+  }
+  // .button-main__text
+  &__text {
+    position: relative;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+  }
+}

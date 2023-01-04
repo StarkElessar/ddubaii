@@ -38,7 +38,23 @@ export function headerFixed() {
   }
 }
 //burger
+const toggleBodyLock = (isLock) => {
+ 
+  const body = document.body
+  const pageWrapper = document.querySelector('.page')
+  const lockPaddingElements = document.querySelectorAll('.lock-padding')
+  const lockPaddingValue = window.innerWidth - pageWrapper.offsetWidth
+  if (lockPaddingElements) {
+    lockPaddingElements.forEach((element) => {
+      element.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px'
+    })
+  }
+
+  body.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px'
+  body.classList.toggle('lock', isLock)
+}
 export function toggleBurgerMenu() {
+  const burgerButton = document.querySelector('.icon-menu')
   let isLock = false
 
   burgerButton.addEventListener('click', () => {

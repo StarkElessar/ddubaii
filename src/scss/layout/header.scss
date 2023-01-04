@@ -1,8 +1,6 @@
 .header {
   position: fixed;
-  background-image: url("./../images/header/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -30,7 +28,7 @@
   &__container {
     display: flex;
     align-items: center;
-    column-gap: rem(20);
+    gap: rem(120);
     transition: $standartTrans;
     height: rem($headerHeight);
     @include media(1024) {
@@ -44,12 +42,14 @@
     margin-right: auto;
     position: relative;
   }
+  &__contacts {
+  }
   // .header__burger
   &__burger {
   }
 }
 // ===========================================================================
-.logo {
+/*.logo {
   display: flex;
   align-items: center;
   @include adaptiveClamp("column-gap", 16, 10, 1400, 768, 1);
@@ -140,5 +140,110 @@
     &_button {
       background-color: transparent;
     }
+  }
+}*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  &__icon {
+    position: absolute;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+  }
+  &__title {
+    font-family: "Gilroy";
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+  &__subtitle {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    opacity: 60%;
+  }
+}
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__list {
+    display: flex;
+    gap: rem(20);
+    margin-right: auto;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    position: relative;
+     transition: all 0.5s ease;
+    &:hover {
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left:0;
+        width: 100%;
+        height: 1px;
+        background-color: #fcd54c;
+       
+      }
+      color: #fcd54c;
+    
+    }
+  }
+
+  &__sub-list {
+    display: none;
+  }
+
+  &__sub-item {
+  }
+
+  &__sub-link {
+    font-family: "Gilroy";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+  }
+
+  &__btn {
+    background-color: #fcd54c;
+    height: rem(40);
+    color: $blackColor;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: rem(12) rem(14);
+    margin-left: auto;
+  }
+}
+.contacts {
+  display: flex;
+  gap: rem(53);
+  align-items: center;
+  &__lang {
+    display: flex;
+    gap: rem(8);
+  }
+
+  &__item {
+    text-transform: uppercase;
+  }
+
+  &__phone {
+    color: #fff;
   }
 }

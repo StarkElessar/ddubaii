@@ -3,7 +3,7 @@ $minWidth: 320; // минимальная ширина телефона
 $maxWidthContainer: 1840; // ширина контейнера с учетом padding слева и справа
 $containerWidth: 1800; // ширина контейнера из макета
 
-$mainOffset: 15; // отступы безопасности для контейнера
+$mainOffset: 20; // отступы безопасности для контейнера
 $mainFont: 'Work Sans'; // указать здесь основное семейство шрифта
 
 $headerHeight: 110;
@@ -19,7 +19,7 @@ $secondAccentColor: $redColor;
 
 $mainFontFamily: $mainFont, sans-serif;
 $fontColor: $whiteColor;
-$fontSize: rem(18);
+$fontSize: rem(16);
 $mainRadius: rem(10);
 
 $standartTrans: all 280ms ease-in-out 0ms;

@@ -37,3 +37,16 @@ export function headerFixed() {
     headerStickyObserver.observe(firstScreen)
   }
 }
+//burger
+export function toggleBurgerMenu() {
+  let isLock = false
+
+  burgerButton.addEventListener('click', () => {
+    isLock = !isLock
+    toggleBodyLock(isLock)
+
+    burgerButton.classList.toggle('active')
+    menu.classList.toggle('active')
+    header.classList.toggle('active')
+  })
+}

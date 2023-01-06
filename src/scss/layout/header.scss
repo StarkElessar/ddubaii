@@ -5,15 +5,15 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  /*&::before {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(36, 36, 36, 70%);
-  }*/
+    background-color: #000;
+  }
   &.sticky {
     box-shadow: 0 2px 15px rgba(#000, 10%);
     .header__container {
@@ -26,6 +26,7 @@
   }
   // .header__container
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
     gap: rem(120);
@@ -48,8 +49,12 @@
     flex: 0 0 auto;
   }
   &__btn {
-    
     @include media(767) {
+      display: none;
+    }
+  }
+  &__hide {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -57,7 +62,35 @@
   &__burger {
   }
 }
+.hide {
+  @media (max-width: 767px) {
+    margin-top: rem(100);
+    display: flex;
+    flex-direction: column;
+    gap: rem(35);
 
+    &__button {
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      gap: rem(35);
+      align-items: center;
+    }
+
+    &__phone {
+    }
+
+    &__lang {
+      display: flex;
+      gap: rem(8);
+    }
+
+    &__item {
+    }
+  }
+}
 .logo {
   display: flex;
   align-items: center;
@@ -84,8 +117,7 @@
 }
 .menu {
   width: 100%;
-  display: flex;
-  //justify-content: space-around;
+  //display: flex;
   align-items: center;
   @include media(960) {
     position: fixed;
@@ -96,23 +128,14 @@
     padding: rem(205) rem(0);
     display: flex;
     flex-direction: column;
+    background-color: #000;
+
     overflow-y: auto;
     transition: top 0.35s ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-     // position: fixed;
-      top: rem(105);
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-    }
     &.active {
-      top: 0;
+      top: 90px;
     }
-    @include media(425) {
+    @include media(767) {
       //margin-top: 105px;
       padding: rem(150) rem(0);
     }
@@ -128,10 +151,9 @@
       flex-direction: column;
       gap: rem(50);
 
-      margin-right: 0;
+      margin: 0 auto;
     }
-    @include media(425) {
-      gap: rem(30);
+    @include media(767) {
       position: relative;
       &:before {
         content: "";
@@ -142,6 +164,9 @@
         bottom: rem(-50);
         left: 0;
       }
+    }
+    @include media(500) {
+      gap: rem(30);
     }
   }
 
@@ -280,42 +305,39 @@
   }
   @include media(767) {
     display: none;
-   
-
   }
   &__lang {
     display: flex;
     gap: rem(8);
   }
-
-  &__item {
-    color: #929292;
-    text-transform: uppercase;
+}
+.item {
+  color: #929292;
+  text-transform: uppercase;
+  transition: all 0.5 ease;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fcd54c;
     transition: all 0.5 ease;
-    &:hover,
-    &:focus,
-    &:active {
-      color: #fcd54c;
-      transition: all 0.5 ease;
-    }
-    &:hover {
-      transform: translateY(rem(1));
-      transition: all 0.5 ease;
-    }
   }
-
-  &__phone {
-    color: #fff;
+  &:hover {
+    transform: translateY(rem(1));
     transition: all 0.5 ease;
-    &:hover,
-    &:focus,
-    &:active {
-      color: #fcd54c;
-      transition: all 0.5 ease;
-    }
-    &:hover {
-      transform: translateY(rem(1));
-      transition: all 0.5 ease;
-    }
+  }
+}
+
+.phone {
+  color: #fff;
+  transition: all 0.5 ease;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fcd54c;
+    transition: all 0.5 ease;
+  }
+  &:hover {
+    transform: translateY(rem(1));
+    transition: all 0.5 ease;
   }
 }

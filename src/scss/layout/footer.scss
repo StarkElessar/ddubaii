@@ -1,16 +1,16 @@
 .footer {
   padding: rem(20) 0;
-  background: $blackColor;
+  background: #000;
   // .footer__container
   &__container {
     display: flex;
     flex-direction: column;
-    //align-items: center;
-    //gap: rem(50);
+   
   }
   &__logo {
     margin: 0 auto;
     margin-bottom: rem(50);
+    margin-top: rem(75);
   }
   &__content {
     border-bottom: 1px solid rgba(255, 255, 255, 0.302);
@@ -160,6 +160,7 @@
     }
   }
   &__footer {
+   // background-color: #272727;
     margin: 22px 0;
     display: flex;
     justify-content: space-between;

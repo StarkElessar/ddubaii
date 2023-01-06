@@ -48,25 +48,8 @@
     flex: 0 0 auto;
   }
   &__btn {
-    background-color: #fcd54c;
-    height: rem(40);
-    color: $blackColor;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16px;
-    padding: rem(12) rem(14);
-flex: 0  0 auto;
-    &:hover {
-      transform: translateY(rem(3));
-      transition: all 0.5s ease;
-    }
-    &:focus,
-    &:active {
-      background-color: $blackColor;
-      border: 1px solid #fcd54c;
-      color: #fcd54c;
-    }
-    @include media (767){
+    
+    @include media(767) {
       display: none;
     }
   }
@@ -74,100 +57,6 @@ flex: 0  0 auto;
   &__burger {
   }
 }
-// ===========================================================================
-/*.logo {
-  display: flex;
-  align-items: center;
-  @include adaptiveClamp("column-gap", 16, 10, 1400, 768, 1);
-  // .logo__image-img
-  &__image-img {
-    position: relative;
-    flex: 0 0 rem(80);
-    height: rem(80);
-    border-radius: 50%;
-    border: rem(2) solid #fff;
-    overflow: hidden;
-    transition: $standartTrans;
-    @include media(1024) {
-      flex-basis: rem(40);
-      height: rem(40);
-    }
-  }
-  &__text {
-    color: #fff;
-    line-height: prc(19, 16);
-    text-transform: uppercase;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: $standartTrans;
-    &:hover {
-      color: #39a4d6;
-    }
-  }
-}
-// ===========================================================================
-.menu {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  //position: relative;
-  @include adaptiveClamp("column-gap", 40, 10, 1400, 768, 1);
-  @include media(900) {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: rem(50) rem(24) rem(20);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-y: auto;
-    gap: 50px;
-    transition: top 0.35s ease;
-    background: url(./../images/header/bg.png) no-repeat 0 0 / cover;
-    @include media(425) {
-      gap: 40px;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(#2a4a67, 40%);
-      backdrop-filter: blur(rem(1));
-    }
-    &.active {
-      top: 0;
-    }
-  }
-
-  &__link {
-    position: relative;
-    font-size: rem(16);
-    @include adaptiveClamp("font-size", 16, 14, 1400, 768, 1);
-    font-weight: 300;
-    color: #fff;
-    font-family: "MuseoSansCyrl";
-    transition: $standartTrans;
-    &:hover {
-      color: #39a4d6;
-    }
-    @include media(900) {
-      font-size: rem(24);
-      text-transform: uppercase;
-    }
-    @include media(425) {
-      font-size: rem(20);
-    }
-    // .menu__link_button
-    &_button {
-      background-color: transparent;
-    }
-  }
-}*/
 
 .logo {
   display: flex;
@@ -204,21 +93,17 @@ flex: 0  0 auto;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: rem(50) rem(24) rem(20);
+    padding: rem(205) rem(0);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     overflow-y: auto;
-    gap: 50px;
     transition: top 0.35s ease;
 
-    @include media(425) {
-      gap: 40px;
-    }
     &::before {
       content: "";
       position: absolute;
-      top: 0;
+     // position: fixed;
+      top: rem(105);
       left: 0;
       width: 100%;
       height: 100%;
@@ -227,6 +112,10 @@ flex: 0  0 auto;
     &.active {
       top: 0;
     }
+    @include media(425) {
+      //margin-top: 105px;
+      padding: rem(150) rem(0);
+    }
   }
   &__list {
     display: flex;
@@ -234,6 +123,26 @@ flex: 0  0 auto;
     margin-right: auto;
     position: relative;
     @include adaptiveClamp("gap", 45, 20, 1200, 1000, 1);
+    @include media(960) {
+      justify-content: center;
+      flex-direction: column;
+      gap: rem(50);
+
+      margin-right: 0;
+    }
+    @include media(425) {
+      gap: rem(30);
+      position: relative;
+      &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #fcd54c;
+        position: absolute;
+        bottom: rem(-50);
+        left: 0;
+      }
+    }
   }
 
   &__item {
@@ -250,7 +159,12 @@ flex: 0  0 auto;
     line-height: 17px;
     position: relative;
     transition: all 0.5s ease;
-
+    @include media(960) {
+      font-family: "Gilroy", sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: prc(44, 36);
+    }
     &:hover,
     &:focus,
     &:active {
@@ -280,6 +194,23 @@ flex: 0  0 auto;
         border-right: 6px solid transparent;
         border-top: 6px solid #fff;
       }
+      @include media(960) {
+        position: relative;
+        padding-right: 50px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 0;
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-top: 10px solid #fff;
+        }
+      }
     }
   }
 
@@ -288,12 +219,19 @@ flex: 0  0 auto;
     position: absolute;
     top: 150%;
     left: 0;
-
     display: flex;
     flex-direction: column;
     width: rem(250);
     flex: 0 0 auto;
     display: none;
+    @include media(960) {
+      position: relative;
+      border: none;
+      padding-left: rem(22);
+      padding-top: rem(20);
+      gap: rem(15);
+      top: 0;
+    }
   }
 
   &__sub-link {
@@ -302,6 +240,7 @@ flex: 0  0 auto;
     font-size: 14px;
     font-weight: 600;
     line-height: 17px;
+
     &:hover {
       transform: translateY(rem(1));
       transition: all 0.5 ease;
@@ -324,20 +263,25 @@ flex: 0  0 auto;
     &_third {
       background-color: $blackColor;
     }
+    @include media(960) {
+      background-color: transparent;
+      color: #fff;
+      padding: 0;
+    }
   }
-
- 
 }
 .contacts {
   display: flex;
   gap: rem(53);
   align-items: center;
   @include adaptiveClamp("gap", 53, 30, 1100, 1000, 1);
-  @include media(960){
+  @include media(960) {
     gap: rem(53);
   }
-  @include media (767){
+  @include media(767) {
     display: none;
+   
+
   }
   &__lang {
     display: flex;

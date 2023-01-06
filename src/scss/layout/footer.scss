@@ -4,14 +4,216 @@
   // .footer__container
   &__container {
     display: flex;
-    align-items: center;
-    @include media(510) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    flex-direction: column;
+    //align-items: center;
+    //gap: rem(50);
   }
   &__logo {
-    margin :0 auto;
-    
+    margin: 0 auto;
+    margin-bottom: rem(50);
+  }
+  &__content {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.302);
+    padding-bottom: 95px;
+    display: flex;
+    justify-content: space-between;
+
+    gap: 120px;
+    flex-wrap: wrap;
+    @media (max-width: 1400px) {
+      justify-content: flex-start;
+    }
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 28px;
+      gap: 0;
+    }
+  }
+
+  &__info {
+  }
+  &__info-title {
+    margin-bottom: 20px;
+    position: relative;
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: сenter;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #3a3a3a;
+      margin-bottom: 0;
+      @media (max-width: 500px) {
+        border-bottom: none;
+      }
+      &_last {
+        border-bottom: none;
+        padding-bottom: 19px;
+      }
+    }
+  }
+
+  &__info-text {
+    //margin-bottom: 20px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #e8e8e8;
+  }
+  &__info-icon {
+    @media (max-width: 768px) {
+      position: relative;
+      transform: rotate(90deg);
+      width: 24px;
+      height: 24px;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 1px;
+        top: 12px;
+        left: 50%;
+        display: block;
+        background-color: #929292;
+        transform: rotate(-45deg) translateX(-50%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 1px;
+        left: 50%;
+        top: 12px;
+        background-color: #929292;
+        transform: rotate(45deg) translateX(-50%);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    @media (max-width: 768px) {
+      display: none;
+      gap: 0;
+      &_last {
+        display: block;
+        position: relative;
+        gap:20px;
+        li {
+          margin-bottom: 13px;
+           
+        }
+      }
+    }
+  }
+
+  &__item {
+    &_btn {
+      @media (min-width: 769px) {
+        display: flex;
+        flex-direction: column;
+      }
+      @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+      }
+    }
+  }
+
+  &__link {
+    color: #e8e8e8;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fcd54c;
+    }
+  }
+  &__btn {
+    @media (min-width: 769px) {
+    margin-top: rem(75);
+    }
+    @media (max-width: 500px) {
+      height: 65px;
+      width: 100%;
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: prc(21, 18);
+      margin-bottom: 40px;
+    }
+  }
+  &__footer {
+    margin: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__copy {
+    //padding: 30px 0;
+    font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 29px;
+    @media (max-width: 767px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    @media (max-width: 600px) {
+      order: 2;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 30px;
+    @media (max-width: 600px) {
+      order: 1;
+    }
+  }
+}
+.social-icon {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    & svg {
+      width: 20px;
+      height: 20px;
+      path {
+        fill: #fff;
+      }
+    }
   }
 }

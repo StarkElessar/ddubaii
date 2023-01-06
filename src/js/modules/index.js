@@ -55,6 +55,8 @@ const toggleBodyLock = (isLock) => {
 }
 export function toggleBurgerMenu() {
   const burgerButton = document.querySelector('.icon-menu')
+  const header = document.querySelector('.header')
+  const menu = document.querySelector('.menu')
   let isLock = false
 
   burgerButton.addEventListener('click', () => {

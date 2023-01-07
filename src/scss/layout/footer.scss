@@ -100,10 +100,14 @@
     @media (max-width: 768px) {
       display: none;
       gap: 0;
+      border: 1px solid #272727;
+      
+     
       &_last {
         display: block;
         position: relative;
         gap:20px;
+        border: none;
         li {
           margin-bottom: 13px;
            
@@ -113,6 +117,14 @@
   }
 
   &__item {
+    @media (max-width: 768px) {
+      border: 1px solid #2727;
+      padding: rem(15) rem(15);
+    }
+    &_last {
+      border: none;
+      padding: 0;
+    }
     &_btn {
       @media (min-width: 769px) {
         display: flex;
@@ -144,6 +156,7 @@
     &:active {
       color: #fcd54c;
     }
+    
   }
   &__btn {
     @media (min-width: 769px) {

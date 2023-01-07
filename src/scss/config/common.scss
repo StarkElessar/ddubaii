@@ -58,9 +58,10 @@
     line-height: 16px;
     padding: rem(12) rem(14);
     flex: 0 0 auto;
+    transition: all 0.5s ease;
     &:hover {
       transform: translateY(rem(3));
-      transition: all 0.5s ease;
+    
     }
     &:focus,
     &:active {

@@ -121,7 +121,10 @@
   align-items: center;
   @include media(960) {
     position: fixed;
-    top: -100%;
+    top:100%;
+ // bottom: 100%;
+    //top: 100%;
+    //padding-top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -129,9 +132,8 @@
     display: flex;
     flex-direction: column;
     background-color: #000;
-
     overflow-y: auto;
-    transition: top 0.35s ease;
+    transition: all 0.35s ease;
     &.active {
       top: 90px;
     }
@@ -171,10 +173,6 @@
   }
 
   &__item {
-    &:hover {
-      transform: translateY(rem(2));
-      transition: all 0.5s ease;
-    }
   }
 
   &__link {
@@ -190,6 +188,7 @@
       font-weight: 600;
       line-height: prc(44, 36);
     }
+   
     &:hover,
     &:focus,
     &:active {
@@ -202,7 +201,12 @@
         height: 1px;
         background-color: #fcd54c;
       }
+      
       color: #fcd54c;
+    }
+    &:hover {
+      transform: translateY(rem(2));
+      
     }
     &_first {
       position: relative;
@@ -265,10 +269,10 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 17px;
-
+    transition: all 0.5 ease;
     &:hover {
       transform: translateY(rem(1));
-      transition: all 0.5 ease;
+      
     }
     &:focus,
     &:active {
@@ -319,11 +323,11 @@
   &:focus,
   &:active {
     color: #fcd54c;
-    transition: all 0.5 ease;
+   
   }
   &:hover {
     transform: translateY(rem(1));
-    transition: all 0.5 ease;
+   
   }
 }
 
@@ -334,10 +338,10 @@
   &:focus,
   &:active {
     color: #fcd54c;
-    transition: all 0.5 ease;
+   
   }
   &:hover {
     transform: translateY(rem(1));
-    transition: all 0.5 ease;
+   
   }
 }

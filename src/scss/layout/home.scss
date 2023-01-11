@@ -3,20 +3,22 @@
 }
 .home {
   position: relative;
-  background: url(../../images/home-bg.png) no-repeat center / cover;
+  background: url(../../images/home/home-bg.png) no-repeat center / cover;
   @media (max-width: 767px) {
-    background-position: left center;
+    background-position: center;
   }
   &__title {
     padding-left: 350px;
     padding-top: 278px;
-   
-   padding-bottom: 329px;
+
+    padding-bottom: 329px;
     @include adaptiveClamp("padding-top", 278, 39, 1440, 768, 1);
-   @include adaptiveClamp("padding-bottom", 329, 106, 1440, 768, 1);
+    @include adaptiveClamp("padding-bottom", 329, 106, 1440, 768, 1);
     @include adaptiveClamp("padding-left", 350, 30, 1440, 768, 1);
-  
-    
+    @media (max-width: 740px) {
+      width: 450px;
+      @include adaptiveClamp("width", 450, 260, 740, 320, 1);
+    }
   }
   &__row {
     position: absolute;
@@ -24,14 +26,18 @@
     right: 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    @include media (1200){
+    @include media(1200) {
       grid-template-columns: repeat(4, 1fr);
+    }
+    @include media(767) {
+      position: relative;
+      //grid-template-columns:   repeat(2, 1fr);
     }
   }
   &__click {
     display: flex;
     gap: rem(35);
-    @include media (860){
+    @include media(860) {
       gap: rem(13);
     }
   }
@@ -109,38 +115,53 @@
     @include adaptiveClamp("padding-left", 60, 30, 1800, 768, 1);
     @include adaptiveClamp("padding-right", 38, 12, 1800, 768, 1);
     @media (max-width: 767px) {
-      flex-direction: column;
+      //flex-direction: column;
       align-items: center;
-      padding-top: 40px;
-
-      padding-right: 29px;
-      gap: 10px;
-      justify-content: space-between;
+      padding-top: 0px;
+      padding-bottom: 14px;
+      padding-right: 0px;
+      //gap: 10px;
+      //justify-content: space-between;
     }
     &_navigation {
       grid-column: 2/3;
       display: flex;
       align-items: center;
       justify-content: center;
-      @include media (1200){
+      @include media(1200) {
         grid-column: 1/2;
+      }
+      @media (max-width: 767px) {
+        position: absolute;
+        left: 0;
+        bottom: 0;
       }
     }
     &_two {
       background-color: #272727;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     &_three {
       background-color: #272727;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     &_four {
       background-color: #272727;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
   }
   &__social {
-   
     display: flex;
     flex-direction: column;
-
+    position: absolute;
+    top: 0;
+    right: 0;
     align-items: end;
     margin-right: 20px;
     margin-top: 40px;
@@ -159,7 +180,6 @@
   gap: 22px;
   position: relative;
   @include adaptiveClamp("gap", 22, 5, 1800, 768, 1);
-
 
   &__border {
     display: none;
@@ -197,17 +217,21 @@
     font-family: "Work Sans", sans-serif;
     font-size: 20px;
     font-weight: 700;
+    position: relative;
     line-height: 23px;
+    display: flex;
+    align-items: center;
+    gap:rem(7);
     @include adaptiveClamp("font-size", 20, 16, 1800, 768, 1);
     @include adaptiveClamp("line-height", 23, 19, 1800, 768, 1);
     @media (max-width: 767px) {
       @include adaptiveClamp("font-size", 16, 12, 768, 425, 1);
       @include adaptiveClamp("line-height", 19, 14, 768, 425, 1);
+      padding-top: 55px;
+    }
+    & svg {
+    
     }
   }
 }
-.social-icon {
-  position: absolute;
-  top:0;
-  right:0;
-}
+

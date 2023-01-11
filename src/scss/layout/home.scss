@@ -31,7 +31,7 @@
     }
     @include media(767) {
       position: relative;
-      //grid-template-columns:   repeat(2, 1fr);
+      grid-columns: 1fr 1fr, 1fr repeat(3, 1fr);
     }
   }
   &__click {
@@ -140,19 +140,19 @@
     &_two {
       background-color: #272727;
       @media (max-width: 767px) {
-        display: none;
+       
       }
     }
     &_three {
       background-color: #272727;
       @media (max-width: 767px) {
-        display: none;
+        //display: none;
       }
     }
     &_four {
       background-color: #272727;
       @media (max-width: 767px) {
-        display: none;
+        //display: none;
       }
     }
   }
@@ -181,9 +181,7 @@
   position: relative;
   @include adaptiveClamp("gap", 22, 5, 1800, 768, 1);
 
-  &__border {
-    display: none;
-  }
+ 
   &__up {
     font-family: "Work Sans", sans-serif;
     font-size: 16px;
@@ -194,6 +192,7 @@
   }
 
   &__center {
+    position: relative;
     font-family: "Space Grotesk", sans-serif;
     font-size: 96px;
     font-weight: 700;
@@ -210,6 +209,29 @@
 
     span {
       color: #fcd54c;
+    }
+    & svg {
+position: absolute;
+top:-50%;
+left:-5%;
+width:126px;
+height:387px;
+@include adaptiveClamp("width", 126, 74, 1400, 768, 1);
+@include adaptiveClamp("height", 387, 229, 1400, 768, 1);
+@media (max-width: 1100px) {
+  top:-40%;
+}
+@media (max-width: 768px) {
+  top:-30%;
+}
+@media (max-width: 767px) {
+  
+  width:126px;
+  height:280px;
+  left:-7%;
+@include adaptiveClamp("width", 126, 63, 768, 425, 1);
+@include adaptiveClamp("height", 280, 195, 768, 425, 1);
+}
     }
   }
 
